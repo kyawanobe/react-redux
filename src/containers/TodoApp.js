@@ -3,16 +3,10 @@ import TodoApp from '../components/TodoApp'
 import { inputTask, addTask } from '../actions/tasks'
 
 //Storeにあるtask,tasksというstateをPropsに渡す
-/*function mapStateToProps({task, tasks}){
+function mapStateToProps({task, tasks}){
     return{
         task,
         tasks
-    }
-}*/
-function mapStateToProps({tasks}){
-    return{
-        task : tasks.task,
-        tasks : tasks.tasks
     }
 }
 
