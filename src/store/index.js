@@ -8,13 +8,12 @@ import tasksReducer from '../reducers/tasks'
 
 export default function createStore(history){
     return reduxCreateStore(
-        //TodoAppのtasksReducerとrouterReducerを合成する
         combineReducers({
             tasks : tasksReducer,
-            router : routerReducer, //ルーティングのためのReducer
-        }),
+            router : routerReducer
+        },
         applyMiddleware(
             routerMiddleware(history)
         )
     )
-}
+)}
