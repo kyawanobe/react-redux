@@ -12,7 +12,7 @@ export default function tasksReducer(state = initialState, action){
             }
         case 'ADD_TASK':
             //追加仕様。入力値がからの場合は、Todoリストに追加しない。
-            if(action.payload.task ===""){
+            if(action.payload.task === ""){
                 alert("入力値が空です。")
                 return state
             }

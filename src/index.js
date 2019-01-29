@@ -1,11 +1,13 @@
 import React from 'react';
-import { Provider } from 'react-redux' // P117追加
-import  createStore  from './store'
 import { render } from 'react-dom'
-import TodoApp from './containers/TodoApp' //./components/TodoAppから変更
-import './index.css';
+import { Route } from 'react-router-dom' //P133_add
+import { Provider } from 'react-redux' // P117追加
 import { ConnectedRouter } from 'react-router-redux'
 import createBrowserHistory from 'history/createBrowserHistory'
+import TodoApp from './containers/TodoApp' //./components/TodoAppから変更
+import Error from './components/Error' //P133_add
+import createStore from './store'
+import './index.css';
 
 //const store = createStore(tasksReducer)
 const history = createBrowserHistory()
@@ -15,7 +17,10 @@ const store = createStore(history)
 render(
     <Provider store = {store}>
         <ConnectedRouter history = {history}>
-            <TodoApp />
+        <div>
+            <Route exact path="/" component = {TodoApp} />
+            <Route exact path="/error" component = {Error} />
+        </div>
         </ConnectedRouter>
     </Provider>,
     document.getElementById('root')
