@@ -4,7 +4,7 @@ import { inputTask, addTask } from '../actions/tasks'
 import { push } from 'react-router-redux'
 
 //Storeにあるtask,tasksというstateをPropsに渡す
-function mapStateToProps({ tasks }){
+function mapStateToProps({tasks}){
     return{
         task : tasks.task,
         tasks : tasks.tasks
@@ -13,7 +13,7 @@ function mapStateToProps({ tasks }){
 
 //ActionをDispatchさせる関数をPropsに渡す。
 function mapDispatchToProps(dispatch){
-    return{
+    return{    
         addTask(task){
             dispatch(addTask(task))
         },

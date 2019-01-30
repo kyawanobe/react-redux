@@ -6,11 +6,13 @@ const initialState  = {
 export default function tasksReducer(state = initialState, action){
     switch(action.type){
         case 'INPUT_TASK':
+            console.log("Called INPUT_TASK")
             return {
                 ...state,
                 task : action.payload.task
             }
         case 'ADD_TASK':
+            console.log("Called ADD_TASK")
             //追加仕様。入力値がからの場合は、Todoリストに追加しない。
             if(action.payload.task === ""){
                 alert("入力値が空です。")
